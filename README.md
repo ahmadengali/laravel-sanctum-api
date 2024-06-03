@@ -1,3 +1,30 @@
+****  NOTES  **********Ahmad Ali
+
+laravel-sanctum-api
+*about sanctum authentication:
+inside laravel 10 we allready have the sanctum function defined inside
+composer.json file. & we can see it inside config/sanctum.php, & inside 
+database/migrations/create_personal_access_tokens_table.php.
+so no need to use composer command for it.
+*about the middleware:
+we allready can see its defined inside routes/api and we can use that 
+auth:sanctum middleware directly.
+*the api definition:
+Register & Login Api's are open routes so we don't need any Token value to
+access these routes. but we need it with Profile & logout Api's as it is a 
+protected values.
+*in register define:
+we call the User Model directly with the static function "create":
+User::Model...
+and as we add password(confirmed) in apicontroller we should add
+password_confirmation field in the postman before sending it.
+===============================================================================
+
+
+
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
